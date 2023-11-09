@@ -47,6 +47,7 @@ export class AppComponent {
   nextPage(): void {
     this.pagingState.update((state) => {
       if (state.page < this.totalPages()) state.page += 1
+      //return state; // RETURN THIS AND IT WONT TRIGGER THE COMPUTED SIGNAL
       return { ...state}; // Cant return state directly since it wont pickup the change whyy????
     })
   }
@@ -54,6 +55,7 @@ export class AppComponent {
   previousPage(): void {
     this.pagingState.update((state) => {
       if (state.page > 1) state.page -= 1
+      //return state; // RETURN THIS AND IT WONT TRIGGER THE COMPUTED SIGNAL
       return { ...state}; // Cant return state directly since it wont pickup the change whyy????
     })
   }
